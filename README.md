@@ -162,7 +162,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/55199981117451" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/+55199981117451" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init(); </script>
