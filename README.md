@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -62,7 +62,7 @@
     <header>
         <div class="container nav-wrapper">
             <div class="logo">Grupo<span>Dantas</span></div>
-            <a href="https://wa.me/55199981117451" class="btn-contact">Orçamento</a>
+            <a href="https://wa.me/5519981117451" class="btn-contact">Orçamento</a>
         </div>
     </header>
 
@@ -117,19 +117,19 @@
 
         <div class="project-card" data-aos="fade-right">
             <div class="project-info">
-                <span class="tag">Financeiro Avançado</span>
-                <h3>Controle de Fluxo de Caixa</h3>
-                <p>Visualize receitas e despesas com clareza. Gráficos detalhados e previsibilidade financeira para o seu negócio.</p>
+                <span class="tag">Ferramenta Dev</span>
+                <h3>Smart Resizer</h3>
+                <p>Ajuste automático de screenshots para os padrões exigidos pela App Store e Google Play.</p>
                 <ul class="features">
-                    <li><i class="fa-solid fa-check"></i> Gráficos Interativos</li>
-                    <li><i class="fa-solid fa-check"></i> Relatórios Mensais</li>
-                    <li><i class="fa-solid fa-check"></i> Dark Mode</li>
+                    <li><i class="fa-solid fa-check"></i> Iphone 6.5" e 5.5"</li>
+                    <li><i class="fa-solid fa-check"></i> Padronização Automática</li>
+                    <li><i class="fa-solid fa-check"></i> Exportação Rápida</li>
                 </ul>
             </div>
             <div class="mockup-container">
                 <div class="phone-frame">
                     <div class="screen">
-                        <img src="IMG_7995.png" alt="Financeiro Kitnet">
+                        <img src="IMG_7997.png" alt="Smart Resizer">
                     </div>
                 </div>
             </div>
@@ -137,14 +137,14 @@
 
         <div class="project-card reverse" data-aos="fade-left">
             <div class="project-info">
-                <span class="tag">Fintech</span>
-                <h3>Controle de Empréstimos</h3>
-                <p>Gestão completa de carteira de clientes, cálculo de juros e controle de inadimplência.</p>
+                <span class="tag">Financeiro Avançado</span>
+                <h3>Controle de Fluxo de Caixa</h3>
+                <p>Visualize receitas e despesas com clareza. Gráficos detalhados e previsibilidade financeira.</p>
             </div>
             <div class="mockup-container">
                 <div class="phone-frame">
                     <div class="screen">
-                        <img src="crop_1242x2688_PRO.jpg" alt="Aguardando Upload" onerror="this.style.display='none'; this.parentElement.style.background='#334155'">
+                        <img src="IMG_7995.png" alt="Financeiro Kitnet">
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/+55199981117451" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://wa.me/5519981117451" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init(); </script>
