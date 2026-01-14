@@ -1,4 +1,5 @@
 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -46,6 +47,15 @@
 
         .features li { margin-bottom: 10px; list-style: none; }
         .features i { color: var(--accent); margin-right: 10px; }
+
+        /* NOVA AREA LEGAL */
+        .legal-section { background: white; padding: 80px 0; border-top: 1px solid #e2e8f0; }
+        .legal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .legal-card { background: var(--bg); padding: 30px; border-radius: 16px; text-align: center; transition: 0.3s; border: 1px solid #e2e8f0; display: block; color: var(--primary); text-decoration: none; }
+        .legal-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1); }
+        .legal-card i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
+        .legal-card h4 { margin-bottom: 10px; font-size: 1.1rem; }
+        .legal-card p { font-size: 0.9rem; color: var(--secondary); }
 
         footer { background: var(--primary); color: #94a3b8; padding: 80px 0 30px; text-align: center; }
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); z-index: 999; }
@@ -152,6 +162,35 @@
 
     </section>
 
+    <section class="legal-section">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h2 style="font-size: 2rem; margin-bottom: 10px;">Transparência e Segurança</h2>
+                <p style="color: var(--secondary);">Nossa conformidade com as diretrizes da Apple (App Store) e Google (Play Store).</p>
+            </div>
+
+            <div class="legal-grid">
+                <a href="politica.html" class="legal-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Política de Privacidade</h4>
+                    <p>Como coletamos e protegemos seus dados em todos os nossos aplicativos.</p>
+                </a>
+
+                <a href="politica.html#termos" class="legal-card">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <h4>Termos de Uso (EULA)</h4>
+                    <p>Regras de utilização, responsabilidades e licenças de software.</p>
+                </a>
+
+                <a href="politica.html#dados" class="legal-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h4>Exclusão de Dados</h4>
+                    <p>Solicite a remoção completa das suas informações dos nossos servidores.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="logo" style="color: white; margin-bottom: 20px;">Grupo<span>Dantas</span></div>
@@ -163,6 +202,11 @@
     </footer>
 
     <a href="https://wa.me/5519981117451" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+</body>
+</html>fa-whatsapp"></i></a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init(); </script>
