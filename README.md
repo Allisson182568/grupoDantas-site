@@ -1,6 +1,6 @@
 
 
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -354,7 +354,4 @@
     <script> AOS.init(); </script>
 </body>
 </html>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script> AOS.init(); </script>
-</body>
-
+    
