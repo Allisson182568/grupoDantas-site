@@ -27,7 +27,7 @@
             --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             --secondary: #64748b;
             --bg: #f8fafc;
-            --blog-color: #e11d48; /* Cor destaque para o NerdNews */
+            --blog-color: #e11d48; 
         }
 
         /* Reset global crucial */
@@ -110,12 +110,12 @@
             position: relative; max-width: 100%; 
         }
 
-        /* --- MOLDURA MACBOOK (Corrigida - Fundo Branco) --- */
+        /* --- MOLDURA MACBOOK (SEM BORDA PRETA) --- */
         .macbook-frame {
             width: 100%;
             max-width: 550px; 
             aspect-ratio: 16/10;
-            background: #c7c7c7; 
+            background: #c7c7c7; /* Prata */
             border-radius: 16px; 
             padding: 10px 10px 16px 10px; 
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
@@ -125,13 +125,13 @@
             display: flex;
         }
         
-        /* 🔥 MUDANÇA AQUI: Cor Branca para fundir com a imagem */
+        /* 🔥 MUDANÇA CRÍTICA: Borda interna transparente e zerada */
         .macbook-bezel {
-            background: #ffffff; /* Era #000 (preto) */
+            background: transparent; /* Sem cor */
             width: 100%;
             height: 100%;
             border-radius: 8px; 
-            padding: 2px; 
+            padding: 0px; /* 🔥 ZERO ESPAÇO */
             display: flex;
             overflow: hidden;
         }
@@ -144,7 +144,7 @@
         .screen { 
             width: 100%; 
             height: 100%; 
-            background: #ffffff; /* 🔥 MUDANÇA: Fundo branco também */
+            background: #ffffff; /* Fundo branco */
             border-radius: 30px; 
             overflow: hidden; 
             position: relative;
@@ -155,7 +155,7 @@
         .screen img { 
             width: 100%; 
             height: 100%; 
-            object-fit: cover; 
+            object-fit: cover; /* Garante que a imagem preencha tudo */
             object-position: top center; 
         }
 
