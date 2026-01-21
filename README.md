@@ -113,7 +113,7 @@
         /* --- MOLDURA MACBOOK (Corrigida - Fundo Branco) --- */
         .macbook-frame {
             width: 100%;
-            max-width: 350px; 
+            max-width: 550px; 
             aspect-ratio: 16/10;
             background: #c7c7c7; 
             border-radius: 16px; 
