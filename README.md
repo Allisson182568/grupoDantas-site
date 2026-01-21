@@ -1,15 +1,23 @@
 
 
 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Grupo Dantas - Soluções digitais, desenvolvimento de aplicativos mobile (Android e iOS) e sistemas de gestão imobiliária.">
+    <meta name="keywords" content="apps, flutter, desenvolvimento, piracicaba, grupo dantas, criação de sites">
+    
     <title>Grupo Dantas | Soluções Digitais</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3795771068897786"
+     crossorigin="anonymous"></script>
+
     <style>
         /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
@@ -24,18 +32,19 @@
         
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
+            overflow-x: hidden; 
         }
 
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: var(--bg); 
             color: var(--primary); 
-            overflow-x: hidden; 
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
-        img { max-width: 100%; display: block; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+        img { max-width: 100%; display: block; height: auto; }
 
         /* --- HEADER --- */
         header { 
@@ -46,10 +55,10 @@
             top: 0; 
             z-index: 1000; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
-            transition: 0.3s;
         }
 
         .container { 
+            width: 100%; 
             max-width: 1200px; 
             margin: 0 auto; 
             padding: 0 20px; 
@@ -60,10 +69,9 @@
             justify-content: space-between; 
             align-items: center; 
             height: 80px; 
-            transition: height 0.3s;
         }
 
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); white-space: nowrap; }
         .logo span { color: var(--accent); }
         
         .btn-contact { 
@@ -73,22 +81,20 @@
             border-radius: 50px; 
             text-decoration: none; 
             font-weight: 600; 
-            transition: transform 0.2s;
             font-size: 0.95rem;
+            white-space: nowrap;
         }
-        .btn-contact:active { transform: scale(0.95); }
 
         /* --- HERO SECTION --- */
         .hero { 
-            padding: 160px 0 100px; 
+            padding: 160px 0 80px; 
             text-align: center; 
         }
         
         .hero h1 { 
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3.5rem); 
             margin-bottom: 20px; 
             font-weight: 800; 
-            line-height: 1.2;
         }
 
         /* --- PROJECT CARDS --- */
@@ -96,7 +102,7 @@
             display: flex; 
             align-items: center; 
             gap: 60px; 
-            margin-bottom: 120px; 
+            margin-bottom: 100px; 
         }
         
         .project-card.reverse { flex-direction: row-reverse; }
@@ -114,24 +120,28 @@
             display: inline-block; 
         }
 
-        /* --- MOCKUP (CELULAR) --- */
+        /* --- MOCKUP (CELULAR OTIMIZADO) --- */
         .mockup-container { 
             flex: 1; 
             display: flex; 
             justify-content: center; 
             perspective: 1000px; 
+            padding: 10px;
         }
         
         .phone-frame { 
             width: 300px; 
-            height: 600px; 
+            /* Altura automática para não quebrar no mobile */
+            height: auto;
+            aspect-ratio: 9/18.5; /* Mantém a proporção de um iPhone */
             background: #1e293b; 
-            border-radius: 45px; 
-            padding: 12px; 
+            border-radius: 40px; 
+            padding: 10px; 
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3); 
             transform: rotateY(-10deg) rotateX(5deg); 
             transition: 0.5s; 
             position: relative;
+            max-width: 100%; 
         }
         
         .reverse .phone-frame { transform: rotateY(10deg) rotateX(5deg); }
@@ -141,7 +151,7 @@
             width: 100%; 
             height: 100%; 
             background: #000; 
-            border-radius: 35px; 
+            border-radius: 32px; 
             overflow: hidden; 
         }
         
@@ -151,6 +161,7 @@
             object-fit: cover; 
         }
 
+        .features { padding-left: 0; }
         .features li { margin-bottom: 10px; list-style: none; font-weight: 500; }
         .features i { color: var(--accent); margin-right: 10px; }
 
@@ -160,18 +171,27 @@
         .legal-card { background: var(--bg); padding: 30px; border-radius: 16px; text-align: center; transition: 0.3s; border: 1px solid #e2e8f0; display: block; color: var(--primary); text-decoration: none; }
         .legal-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1); }
         .legal-card i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
-        .legal-card h4 { margin-bottom: 10px; font-size: 1.1rem; }
-        .legal-card p { font-size: 0.9rem; color: var(--secondary); }
-
+        
         /* --- FOOTER --- */
         footer { background: var(--primary); color: #94a3b8; padding: 80px 0 30px; text-align: center; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); z-index: 999; transition: transform 0.2s; }
+        
+        .whatsapp-float { 
+            position: fixed; bottom: 30px; right: 30px; 
+            width: 60px; height: 60px; 
+            background: #25d366; color: white; 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 30px; 
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); 
+            z-index: 999; 
+            transition: transform 0.2s; 
+        }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* --- RESPONSIVIDADE (TABLET E CELULAR) --- */
+        /* --- RESPONSIVIDADE TABLET --- */
         @media (max-width: 900px) {
             .nav-wrapper { height: 70px; }
-            .hero { padding: 140px 0 60px; }
+            .hero { padding: 120px 0 50px; }
             
             .project-card, .project-card.reverse { 
                 flex-direction: column; 
@@ -186,26 +206,29 @@
                 margin-top: 20px; 
             }
 
-            /* Remove o efeito 3D no celular para evitar bugs */
             .phone-frame, .reverse .phone-frame { 
                 transform: none !important; 
                 margin: 0 auto;
             }
-            .phone-frame:hover { transform: none !important; }
         }
 
-        /* --- RESPONSIVIDADE (CELULARES PEQUENOS) --- */
+        /* --- RESPONSIVIDADE CELULAR (Correção Final) --- */
         @media (max-width: 480px) {
             .logo { font-size: 1.2rem; }
             .btn-contact { padding: 8px 16px; font-size: 0.85rem; }
             
-            .hero h1 { font-size: 2.2rem; } 
+            .hero h1 { font-size: 2rem; } 
+            
+            /* Ajuste crítico: Celular fluido */
+            .mockup-container { width: 100%; padding: 0 10px; }
             
             .phone-frame { 
-                width: 260px; 
-                height: 520px; 
-                border-radius: 35px;
+                width: 100%; 
+                max-width: 260px; 
+                border-radius: 30px;
+                /* Remove altura fixa para não estourar */
             }
+            .screen { border-radius: 25px; }
 
             .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
             
@@ -226,11 +249,11 @@
     <section class="hero">
         <div class="container" data-aos="fade-up">
             <h1>Transformamos ideias em<br><span style="color: var(--accent)">Aplicativos de Sucesso</span></h1>
-            <p style="color: var(--secondary); margin-top: 20px;">Especialistas em desenvolvimento mobile (Android & iOS) e sistemas de gestão.</p>
+            <p style="color: var(--secondary); margin-top: 20px; font-size: 1.1rem;">Especialistas em desenvolvimento mobile e sistemas de gestão.</p>
         </div>
     </section>
 
-    <section class="container" style="padding-bottom: 100px;">
+    <section class="container" style="padding-bottom: 50px;">
         
         <div class="project-card" data-aos="fade-right">
             <div class="project-info">
@@ -312,7 +335,7 @@
     <section class="legal-section">
         <div class="container">
             <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-                <h2 style="font-size: 2rem; margin-bottom: 10px;">Transparência e Segurança</h2>
+                <h2 style="font-size: 1.8rem; margin-bottom: 10px;">Transparência e Segurança</h2>
                 <p style="color: var(--secondary);">Nossa conformidade com as diretrizes da Apple (App Store) e Google (Play Store).</p>
             </div>
 
@@ -343,15 +366,15 @@
             <div class="logo" style="color: white; margin-bottom: 20px;">Grupo<span>Dantas</span></div>
             <p>Desenvolvendo o futuro do seu negócio.</p>
             <br>
-            <a href="app-ads.txt" style="color: #475569; font-size: 0.8rem; border: 1px solid #334155; padding: 5px 10px; border-radius: 5px; text-decoration: none;">AdMob Validation</a>
-            <p style="margin-top: 30px; font-size: 0.9rem; color: #475569;">&copy; 2026 Grupo Dantas.</p>
+            <a href="ads.txt" style="color: #94a3b8; font-size: 0.8rem; border: 1px solid #334155; padding: 5px 10px; border-radius: 5px; text-decoration: none; margin-right: 10px;">AdSense Check</a>
+            <a href="app-ads.txt" style="color: #94a3b8; font-size: 0.8rem; border: 1px solid #334155; padding: 5px 10px; border-radius: 5px; text-decoration: none;">AdMob Check</a>
+            <p style="margin-top: 30px; font-size: 0.8rem; color: #475569;">&copy; 2026 Grupo Dantas.</p>
         </div>
     </footer>
 
     <a href="https://wa.me/5519981117451" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script> AOS.init(); </script>
+    <script> AOS.init({ duration: 800, once: true }); </script>
 </body>
 </html>
-    
