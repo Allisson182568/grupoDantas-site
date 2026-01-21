@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -107,30 +107,28 @@
             position: relative; max-width: 100%; 
         }
 
-        /* --- MOLDURA MACBOOK (Corrigida) --- */
+        /* --- MOLDURA MACBOOK (Corrigida - Borda Fina) --- */
         .macbook-frame {
             width: 100%;
-            max-width: 500px; /* Limite de largura */
+            max-width: 550px; /* Um pouco mais largo */
             aspect-ratio: 16/10;
-            background: #cbd5e1; /* Prata */
-            border-radius: 20px;
-            padding: 12px 12px 18px 12px; /* Espaço para simular o corpo */
+            background: #c7c7c7; /* Prata um pouco mais escuro */
+            border-radius: 16px; /* Cantos externos */
+            padding: 10px 10px 16px 10px; /* Corpo do macbook */
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
             transform: rotateY(-10deg) rotateX(5deg);
             transition: 0.5s;
             position: relative;
             display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
-        /* Borda preta da tela do Mac (Bezel) */
+        /* Borda preta da tela do Mac (Bezel) - AGORA MAIS FINA */
         .macbook-bezel {
             background: #000;
             width: 100%;
             height: 100%;
-            border-radius: 10px;
-            padding: 5px; /* Espessura da borda preta */
+            border-radius: 8px; /* Cantos da parte preta */
+            padding: 2px; /* <--- AQUI: Reduzido para 2px para borda fina */
             display: flex;
             overflow: hidden;
         }
@@ -149,16 +147,16 @@
             position: relative;
         }
         
-        /* Correção para o Mac não ter borda preta sobrando */
+        /* Correção para o Mac */
         .macbook-bezel .screen {
-            border-radius: 6px; /* Tela do Mac é menos arredondada */
+            border-radius: 6px; /* Cantos da tela iluminada */
         }
 
         .screen img { 
             width: 100%; 
             height: 100%; 
-            object-fit: cover; /* Garante que a imagem preencha tudo */
-            object-position: top center; /* Foca no topo da imagem */
+            object-fit: cover; 
+            object-position: top center; 
         }
 
         .features { padding-left: 0; }
