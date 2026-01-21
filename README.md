@@ -27,7 +27,7 @@
             --blog-color: #e11d48; /* Cor destaque para o NerdNews */
         }
 
-        /* Reset global crucial para evitar overflow */
+        /* Reset global crucial */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
@@ -38,7 +38,6 @@
             line-height: 1.6;
             width: 100%;
             overflow-x: hidden;
-            position: relative;
         }
         h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; word-wrap: break-word; }
         img { max-width: 100%; display: block; height: auto; }
@@ -56,7 +55,7 @@
             width: 100%; 
             max-width: 1200px; 
             margin: 0 auto; 
-            padding: 0 20px; /* Padding padrão */
+            padding: 0 20px; 
         }
 
         .nav-wrapper { 
@@ -83,13 +82,12 @@
 
         /* --- HERO --- */
         .hero { padding: 160px 0 80px; text-align: center; }
-        /* Ajustei o clamp para fontes menores em telas muito pequenas */
         .hero h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); margin-bottom: 20px; font-weight: 800; }
 
         /* --- PROJETOS --- */
         .project-card { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; }
         .project-card.reverse { flex-direction: row-reverse; }
-        .project-info { flex: 1; min-width: 0; /* Evita que flex items estourem */ }
+        .project-info { flex: 1; min-width: 0; }
         
         .tag { 
             background: #dbeafe; color: var(--accent); padding: 6px 14px; border-radius: 20px; 
@@ -97,42 +95,71 @@
         }
         .tag.news { background: #ffe4e6; color: var(--blog-color); }
 
-        /* --- MOCKUPS (Contêiner Geral) --- */
-        .mockup-container { flex: 1; display: flex; justify-content: center; perspective: 1000px; padding: 20px 0; }
+        /* --- MOCKUPS (Geral) --- */
+        .mockup-container { flex: 1; display: flex; justify-content: center; perspective: 1000px; padding: 10px; }
 
-        /* --- MOLDURA CELULAR (Phone Frame) --- */
+        /* --- MOLDURA CELULAR --- */
         .phone-frame { 
-            width: 300px; height: auto; aspect-ratio: 9/19; 
+            width: 280px; height: auto; aspect-ratio: 9/19; 
             background: #1e293b; border-radius: 40px; padding: 10px; 
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3); 
             transform: rotateY(-10deg) rotateX(5deg); transition: 0.5s; 
             position: relative; max-width: 100%; 
         }
 
-        /* --- NOVA MOLDURA MACBOOK (Laptop Frame) --- */
+        /* --- MOLDURA MACBOOK (Corrigida) --- */
         .macbook-frame {
-            width: 480px; /* Mais largo */
-            height: auto;
-            aspect-ratio: 16/10; /* Proporção de laptop */
-            background: #cbd5e1; /* Cor prata/cinza */
-            border-radius: 24px; /* Cantos menos arredondados que o celular */
-            padding: 12px; /* Borda da tela */
+            width: 100%;
+            max-width: 500px; /* Limite de largura */
+            aspect-ratio: 16/10;
+            background: #cbd5e1; /* Prata */
+            border-radius: 20px;
+            padding: 12px 12px 18px 12px; /* Espaço para simular o corpo */
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
             transform: rotateY(-10deg) rotateX(5deg);
             transition: 0.5s;
             position: relative;
-            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        /* Ajuste da tela interna do macbook */
-        .macbook-frame .screen { border-radius: 16px; }
+        
+        /* Borda preta da tela do Mac (Bezel) */
+        .macbook-bezel {
+            background: #000;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 5px; /* Espessura da borda preta */
+            display: flex;
+            overflow: hidden;
+        }
 
-        /* Efeitos de Hover compartilhados */
+        /* Efeitos Hover */
         .phone-frame:hover, .macbook-frame:hover { transform: rotateY(0) rotateX(0) translateY(-10px); }
         .reverse .phone-frame, .reverse .macbook-frame { transform: rotateY(10deg) rotateX(5deg); }
         
         /* Tela interna */
-        .screen { width: 100%; height: 100%; background: #000; border-radius: 32px; overflow: hidden; }
-        .screen img { width: 100%; height: 100%; object-fit: cover; }
+        .screen { 
+            width: 100%; 
+            height: 100%; 
+            background: #000; 
+            border-radius: 30px; 
+            overflow: hidden; 
+            position: relative;
+        }
+        
+        /* Correção para o Mac não ter borda preta sobrando */
+        .macbook-bezel .screen {
+            border-radius: 6px; /* Tela do Mac é menos arredondada */
+        }
+
+        .screen img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; /* Garante que a imagem preencha tudo */
+            object-position: top center; /* Foca no topo da imagem */
+        }
 
         .features { padding-left: 0; }
         .features li { margin-bottom: 10px; list-style: none; font-weight: 500; }
@@ -158,40 +185,29 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* --- RESPONSIVIDADE (TABLET) --- */
+        /* --- RESPONSIVIDADE --- */
         @media (max-width: 900px) {
             .nav-wrapper { height: 70px; }
             .hero { padding: 120px 0 50px; }
             .project-card, .project-card.reverse { flex-direction: column; text-align: center; gap: 40px; margin-bottom: 80px; }
             .features { display: inline-block; text-align: left; margin-top: 20px; }
-            
-            /* Remove efeito 3D em telas menores para evitar bugs de layout */
-            .phone-frame, .reverse .phone-frame,
-            .macbook-frame, .reverse .macbook-frame { transform: none !important; margin: 0 auto; }
+            .phone-frame, .reverse .phone-frame, .macbook-frame, .reverse .macbook-frame { transform: none !important; margin: 0 auto; }
         }
 
-        /* --- RESPONSIVIDADE (CELULAR) - CORREÇÃO DE CORTE --- */
         @media (max-width: 480px) {
-            /* Reduz padding lateral para ganhar espaço */
             .container { padding: 0 15px; }
-            
             .logo { font-size: 1.2rem; }
             .nav-buttons { gap: 10px; }
-            .btn-blog span { display: none; } /* Esconde texto 'Blog' no mobile */
+            .btn-blog span { display: none; } 
             .btn-blog i { font-size: 1.2rem; color: var(--blog-color); }
             .btn-contact { padding: 8px 16px; font-size: 0.85rem; }
-            
-            /* Ajuste de fonte do título */
             .hero h1 { font-size: 2rem; } 
             
             .mockup-container { width: 100%; padding: 0; }
             
-            /* Ajuste dos frames para não estourar a largura */
+            /* Ajuste fino para não cortar no mobile */
             .phone-frame { width: 100%; max-width: 260px; border-radius: 30px; }
-            .macbook-frame { width: 100%; max-width: 320px; border-radius: 18px; }
-            
-            .screen { border-radius: 25px; }
-            .macbook-frame .screen { border-radius: 12px; }
+            .macbook-frame { width: 100%; max-width: 340px; border-radius: 12px; }
             
             .legal-grid { grid-template-columns: 1fr; }
             .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
@@ -237,8 +253,10 @@
             </div>
             <div class="mockup-container">
                 <div class="macbook-frame">
-                    <div class="screen">
-                        <img src="blog.png" alt="Portal NerdNews no Desktop">
+                    <div class="macbook-bezel">
+                        <div class="screen">
+                            <img src="blog.png" alt="Portal NerdNews">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,6 +270,7 @@
                 <ul class="features">
                     <li><i class="fa-solid fa-check"></i> Dashboard Gestor</li>
                     <li><i class="fa-solid fa-check"></i> Controle Financeiro</li>
+                    <li><i class="fa-solid fa-check"></i> Backup Nuvem</li>
                 </ul>
             </div>
             <div class="mockup-container">
@@ -271,12 +290,48 @@
                 <ul class="features">
                     <li><i class="fa-solid fa-check"></i> Smart Resizer (App Store)</li>
                     <li><i class="fa-solid fa-check"></i> Editor Panorama</li>
+                    <li><i class="fa-solid fa-check"></i> Criador de Mockups</li>
                 </ul>
             </div>
             <div class="mockup-container">
                 <div class="phone-frame">
                     <div class="screen">
                         <img src="IMG_7996.png" alt="App Rotação">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reverse" data-aos="fade-left">
+            <div class="project-info">
+                <span class="tag">Ferramenta Dev</span>
+                <h3>Smart Resizer</h3>
+                <p>Ajuste automático de screenshots para os padrões exigidos pela App Store e Google Play.</p>
+                <ul class="features">
+                    <li><i class="fa-solid fa-check"></i> Iphone 6.5" e 5.5"</li>
+                    <li><i class="fa-solid fa-check"></i> Padronização Automática</li>
+                    <li><i class="fa-solid fa-check"></i> Exportação Rápida</li>
+                </ul>
+            </div>
+            <div class="mockup-container">
+                <div class="phone-frame">
+                    <div class="screen">
+                        <img src="IMG_7997.png" alt="Smart Resizer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-right">
+            <div class="project-info">
+                <span class="tag">Financeiro Avançado</span>
+                <h3>Controle de Fluxo de Caixa</h3>
+                <p>Visualize receitas e despesas com clareza. Gráficos detalhados e previsibilidade financeira.</p>
+            </div>
+            <div class="mockup-container">
+                <div class="phone-frame">
+                    <div class="screen">
+                        <img src="IMG_7995.png" alt="Financeiro Kitnet">
                     </div>
                 </div>
             </div>
