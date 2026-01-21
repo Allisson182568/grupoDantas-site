@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     
     <meta name="description" content="Grupo Dantas - Desenvolvimento de Apps, Sistemas e Conteúdo Tech (NerdNews).">
-    <meta name="keywords" content="apps, flutter, desenvolvimento, piracicaba, nerdnews, tecnologia">
+    <meta name="keywords" content="apps, flutter, desenvolvimento, piracicaba, nerdnews, tecnologia, grupo dantas">
     
     <title>Grupo Dantas | Soluções Digitais</title>
     
@@ -27,11 +27,20 @@
             --blog-color: #e11d48; /* Cor destaque para o NerdNews */
         }
 
+        /* Reset global crucial para evitar overflow */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--primary); overflow-x: hidden; line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--primary); 
+            line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; word-wrap: break-word; }
         img { max-width: 100%; display: block; height: auto; }
         a { text-decoration: none; }
 
@@ -43,7 +52,12 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
         }
 
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container { 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; /* Padding padrão */
+        }
 
         .nav-wrapper { 
             display: flex; justify-content: space-between; align-items: center; height: 80px; 
@@ -54,12 +68,8 @@
         
         .nav-buttons { display: flex; gap: 15px; align-items: center; }
 
-        /* Botão do Blog (Novo) */
         .btn-blog {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            color: var(--primary); font-weight: 600; font-size: 0.95rem; transition: color 0.3s;
             display: flex; align-items: center; gap: 5px;
         }
         .btn-blog:hover { color: var(--blog-color); }
@@ -73,23 +83,24 @@
 
         /* --- HERO --- */
         .hero { padding: 160px 0 80px; text-align: center; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; font-weight: 800; }
+        /* Ajustei o clamp para fontes menores em telas muito pequenas */
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); margin-bottom: 20px; font-weight: 800; }
 
         /* --- PROJETOS --- */
         .project-card { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; }
         .project-card.reverse { flex-direction: row-reverse; }
-        .project-info { flex: 1; }
+        .project-info { flex: 1; min-width: 0; /* Evita que flex items estourem */ }
         
         .tag { 
             background: #dbeafe; color: var(--accent); padding: 6px 14px; border-radius: 20px; 
             font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; display: inline-block; 
         }
-        /* Tag especial para o NerdNews */
         .tag.news { background: #ffe4e6; color: var(--blog-color); }
 
-        /* --- MOCKUPS (Celular Fluido) --- */
-        .mockup-container { flex: 1; display: flex; justify-content: center; perspective: 1000px; padding: 10px; }
-        
+        /* --- MOCKUPS (Contêiner Geral) --- */
+        .mockup-container { flex: 1; display: flex; justify-content: center; perspective: 1000px; padding: 20px 0; }
+
+        /* --- MOLDURA CELULAR (Phone Frame) --- */
         .phone-frame { 
             width: 300px; height: auto; aspect-ratio: 9/19; 
             background: #1e293b; border-radius: 40px; padding: 10px; 
@@ -97,9 +108,29 @@
             transform: rotateY(-10deg) rotateX(5deg); transition: 0.5s; 
             position: relative; max-width: 100%; 
         }
-        .reverse .phone-frame { transform: rotateY(10deg) rotateX(5deg); }
-        .phone-frame:hover { transform: rotateY(0) rotateX(0) translateY(-10px); }
+
+        /* --- NOVA MOLDURA MACBOOK (Laptop Frame) --- */
+        .macbook-frame {
+            width: 480px; /* Mais largo */
+            height: auto;
+            aspect-ratio: 16/10; /* Proporção de laptop */
+            background: #cbd5e1; /* Cor prata/cinza */
+            border-radius: 24px; /* Cantos menos arredondados que o celular */
+            padding: 12px; /* Borda da tela */
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
+            transform: rotateY(-10deg) rotateX(5deg);
+            transition: 0.5s;
+            position: relative;
+            max-width: 100%;
+        }
+        /* Ajuste da tela interna do macbook */
+        .macbook-frame .screen { border-radius: 16px; }
+
+        /* Efeitos de Hover compartilhados */
+        .phone-frame:hover, .macbook-frame:hover { transform: rotateY(0) rotateX(0) translateY(-10px); }
+        .reverse .phone-frame, .reverse .macbook-frame { transform: rotateY(10deg) rotateX(5deg); }
         
+        /* Tela interna */
         .screen { width: 100%; height: 100%; background: #000; border-radius: 32px; overflow: hidden; }
         .screen img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -127,26 +158,43 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* --- RESPONSIVIDADE --- */
+        /* --- RESPONSIVIDADE (TABLET) --- */
         @media (max-width: 900px) {
             .nav-wrapper { height: 70px; }
             .hero { padding: 120px 0 50px; }
             .project-card, .project-card.reverse { flex-direction: column; text-align: center; gap: 40px; margin-bottom: 80px; }
             .features { display: inline-block; text-align: left; margin-top: 20px; }
-            .phone-frame, .reverse .phone-frame { transform: none !important; margin: 0 auto; }
+            
+            /* Remove efeito 3D em telas menores para evitar bugs de layout */
+            .phone-frame, .reverse .phone-frame,
+            .macbook-frame, .reverse .macbook-frame { transform: none !important; margin: 0 auto; }
         }
 
+        /* --- RESPONSIVIDADE (CELULAR) - CORREÇÃO DE CORTE --- */
         @media (max-width: 480px) {
+            /* Reduz padding lateral para ganhar espaço */
+            .container { padding: 0 15px; }
+            
             .logo { font-size: 1.2rem; }
             .nav-buttons { gap: 10px; }
-            .btn-blog span { display: none; } /* Esconde texto 'Blog' no mobile, deixa icone */
+            .btn-blog span { display: none; } /* Esconde texto 'Blog' no mobile */
             .btn-blog i { font-size: 1.2rem; color: var(--blog-color); }
             .btn-contact { padding: 8px 16px; font-size: 0.85rem; }
+            
+            /* Ajuste de fonte do título */
             .hero h1 { font-size: 2rem; } 
-            .mockup-container { width: 100%; padding: 0 10px; }
+            
+            .mockup-container { width: 100%; padding: 0; }
+            
+            /* Ajuste dos frames para não estourar a largura */
             .phone-frame { width: 100%; max-width: 260px; border-radius: 30px; }
+            .macbook-frame { width: 100%; max-width: 320px; border-radius: 18px; }
+            
             .screen { border-radius: 25px; }
-            .legal-grid { grid-template-columns: 1fr; } 
+            .macbook-frame .screen { border-radius: 12px; }
+            
+            .legal-grid { grid-template-columns: 1fr; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
@@ -188,9 +236,9 @@
                 </div>
             </div>
             <div class="mockup-container">
-                <div class="phone-frame">
+                <div class="macbook-frame">
                     <div class="screen">
-                        <img src="image_d325e3.jpg" alt="Portal NerdNews">
+                        <img src="blog.png" alt="Portal NerdNews no Desktop">
                     </div>
                 </div>
             </div>
@@ -204,7 +252,6 @@
                 <ul class="features">
                     <li><i class="fa-solid fa-check"></i> Dashboard Gestor</li>
                     <li><i class="fa-solid fa-check"></i> Controle Financeiro</li>
-                    <li><i class="fa-solid fa-check"></i> Backup Nuvem</li>
                 </ul>
             </div>
             <div class="mockup-container">
