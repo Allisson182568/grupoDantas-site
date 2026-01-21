@@ -110,7 +110,7 @@
             position: relative; max-width: 100%; 
         }
 
-        /* --- MOLDURA MACBOOK (Borda Fina) --- */
+        /* --- MOLDURA MACBOOK (Corrigida - Fundo Branco) --- */
         .macbook-frame {
             width: 100%;
             max-width: 550px; 
@@ -125,13 +125,13 @@
             display: flex;
         }
         
-        /* Borda preta fina */
+        /* 🔥 MUDANÇA AQUI: Cor Branca para fundir com a imagem */
         .macbook-bezel {
-            background: #000;
+            background: #ffffff; /* Era #000 (preto) */
             width: 100%;
             height: 100%;
             border-radius: 8px; 
-            padding: 2px; /* Borda fina */
+            padding: 2px; 
             display: flex;
             overflow: hidden;
         }
@@ -144,7 +144,7 @@
         .screen { 
             width: 100%; 
             height: 100%; 
-            background: #000; 
+            background: #ffffff; /* 🔥 MUDANÇA: Fundo branco também */
             border-radius: 30px; 
             overflow: hidden; 
             position: relative;
