@@ -1,8 +1,11 @@
 
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <meta name="google-adsense-account" content="ca-pub-3795771068897786">
     
     <meta name="description" content="Grupo Dantas - Desenvolvimento de Apps, Sistemas e Conteúdo Tech (NerdNews).">
     <meta name="keywords" content="apps, flutter, desenvolvimento, piracicaba, nerdnews, tecnologia, grupo dantas">
@@ -107,14 +110,14 @@
             position: relative; max-width: 100%; 
         }
 
-        /* --- MOLDURA MACBOOK (Corrigida - Borda Fina) --- */
+        /* --- MOLDURA MACBOOK (Borda Fina) --- */
         .macbook-frame {
             width: 100%;
-            max-width: 550px; /* Um pouco mais largo */
+            max-width: 550px; 
             aspect-ratio: 16/10;
-            background: #c7c7c7; /* Prata um pouco mais escuro */
-            border-radius: 16px; /* Cantos externos */
-            padding: 10px 10px 16px 10px; /* Corpo do macbook */
+            background: #c7c7c7; 
+            border-radius: 16px; 
+            padding: 10px 10px 16px 10px; 
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
             transform: rotateY(-10deg) rotateX(5deg);
             transition: 0.5s;
@@ -122,13 +125,13 @@
             display: flex;
         }
         
-        /* Borda preta da tela do Mac (Bezel) - AGORA MAIS FINA */
+        /* Borda preta fina */
         .macbook-bezel {
             background: #000;
             width: 100%;
             height: 100%;
-            border-radius: 8px; /* Cantos da parte preta */
-            padding: 2px; /* <--- AQUI: Reduzido para 2px para borda fina */
+            border-radius: 8px; 
+            padding: 2px; /* Borda fina */
             display: flex;
             overflow: hidden;
         }
@@ -147,10 +150,7 @@
             position: relative;
         }
         
-        /* Correção para o Mac */
-        .macbook-bezel .screen {
-            border-radius: 6px; /* Cantos da tela iluminada */
-        }
+        .macbook-bezel .screen { border-radius: 6px; }
 
         .screen img { 
             width: 100%; 
@@ -203,7 +203,6 @@
             
             .mockup-container { width: 100%; padding: 0; }
             
-            /* Ajuste fino para não cortar no mobile */
             .phone-frame { width: 100%; max-width: 260px; border-radius: 30px; }
             .macbook-frame { width: 100%; max-width: 340px; border-radius: 12px; }
             
